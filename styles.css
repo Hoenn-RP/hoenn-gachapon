@@ -1,0 +1,17 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+}
+
+#preview-container {
+    margin-bottom: 20px;
+}
