@@ -59,7 +59,7 @@
 
     <textarea id="html-template" rows="10" cols="50"></textarea>
 
-    <script>
+       <script>
         // Fetch excluded Pokémon names from JSON
         let excludedPokemon = [];
 
@@ -91,9 +91,11 @@
                         .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
 
                     const randomPokemons = [];
-                    for (let i = 0; i < count; i++) {
+                    while (randomPokemons.length < count) {
                         const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
-                        randomPokemons.push(randomPokemon);
+                        if (!randomPokemons.some(pokemon => pokemon.name === randomPokemon.name)) {
+                            randomPokemons.push(randomPokemon);
+                        }
                     }
                     callback(randomPokemons);
                 })
@@ -103,9 +105,13 @@
         function generateTemplate(type) {
             if (type === 'all') {
                 getAllPokemonTypes(function (allTypes) {
+                    const generatedPokemon = [];
                     allTypes.forEach(pokemonType => {
-                        getRandomPokemon(pokemonType, 3, function (randomPokemons) {
-                            displayTemplate(randomPokemons);
+                        getRandomPokemon(pokemonType, 1, function (randomPokemons) {
+                            generatedPokemon.push(...randomPokemons);
+                            if (generatedPokemon.length === allTypes.length) {
+                                displayTemplate(generatedPokemon);
+                            }
                         });
                     });
                 });
