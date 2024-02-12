@@ -59,68 +59,65 @@
 
     <textarea id="html-template" rows="10" cols="50"></textarea>
 
-<script>
+    <script>
         // Fetch excluded Pokémon names from JSON
         let excludedPokemon = [];
 
-async function fetchExcludedPokemon() {
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excluded-pokemon.json');
-        const data = await response.json();
-        excludedPokemon = data.excludedPokemon;
-    } catch (error) {
-        console.error('Error fetching excluded Pokémon:', error);
-    }
-}
+        async function fetchExcludedPokemon() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excluded-pokemon.json');
+                excludedPokemon = await response.json();
+            } catch (error) {
+                console.error('Error fetching excluded Pokémon:', error);
+            }
+        }
 
-        async function getAllPokemonTypes(callback) {
+        fetchExcludedPokemon();
+
+        function getAllPokemonTypes(callback) {
             const url = 'https://pokeapi.co/api/v2/type/';
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const allTypes = data.results.map(type => type.name);
-                callback(allTypes);
-            } catch (error) {
-                console.error('Error fetching Pokemon types:', error);
-            }
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const allTypes = data.results.map(type => type.name);
+                    callback(allTypes);
+                })
+                .catch(error => console.error('Error fetching Pokemon types:', error));
         }
 
-        async function getRandomPokemon(type, count, callback) {
+        function getRandomPokemon(type, count, callback) {
             const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                // Filter out specific Pokémon names
-                const filteredPokemons = data.pokemon
-                    .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Filter out specific Pokémon names
+                    const filteredPokemons = data.pokemon
+                        .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
 
-                const randomPokemons = [];
-                while (randomPokemons.length < count) {
-                    const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
-                    if (!randomPokemons.some(pokemon => pokemon.name === randomPokemon.name)) {
-                        randomPokemons.push(randomPokemon);
+                    const randomPokemons = [];
+                    while (randomPokemons.length < count) {
+                        const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
+                        if (!randomPokemons.some(pokemon => pokemon.name === randomPokemon.name)) {
+                            randomPokemons.push(randomPokemon);
+                        }
                     }
-                }
-                callback(randomPokemons);
-            } catch (error) {
-                console.error('Error fetching Pokemon data:', error);
-            }
+                    callback(randomPokemons);
+                })
+                .catch(error => console.error('Error fetching Pokemon data:', error));
         }
 
-        async function generateTemplate(type) {
-            await fetchExcludedPokemon(); // Wait for excluded Pokémon to be fetched
-
+        function generateTemplate(type) {
             if (type === 'all') {
-                getAllPokemonTypes(async function (allTypes) {
+                getAllPokemonTypes(function (allTypes) {
                     const generatedPokemon = [];
-                    for (const pokemonType of allTypes) {
-                        await getRandomPokemon(pokemonType, 1, function (randomPokemons) {
+                    allTypes.forEach(pokemonType => {
+                        getRandomPokemon(pokemonType, 1, function (randomPokemons) {
                             generatedPokemon.push(...randomPokemons);
                             if (generatedPokemon.length === allTypes.length) {
                                 displayTemplate(generatedPokemon);
                             }
                         });
-                    }
+                    });
                 });
             } else {
                 getRandomPokemon(type, 3, function (randomPokemons) {
