@@ -139,7 +139,7 @@
         <h1>Your Generated Pokemon</h1>
         
         ${randomPokemons.map(pokemon => `
-            <img src="https://pokeapi.co/media/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}">
         `).join('')}
     
         <!-- Add your additional body content here -->
