@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Pokemon Generator</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+
+        #preview-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Random Pokemon Generator</h1>
+
+    <div id="preview-container">
+        <h2>Preview</h2>
+        <div id="image-preview"></div>
+    </div>
+
+    <!-- Buttons for different Pokemon types -->
+    <button onclick="generateTemplate('normal')">Generate Normal Type</button>
+    <button onclick="generateTemplate('fire')">Generate Fire Type</button>
+    <button onclick="generateTemplate('water')">Generate Water Type</button>
+    <button onclick="generateTemplate('electric')">Generate Electric Type</button>
+    <button onclick="generateTemplate('grass')">Generate Grass Type</button>
+    <button onclick="generateTemplate('ice')">Generate Ice Type</button>
+    <button onclick="generateTemplate('fighting')">Generate Fighting Type</button>
+    <button onclick="generateTemplate('poison')">Generate Poison Type</button>
+    <button onclick="generateTemplate('ground')">Generate Ground Type</button>
+    <button onclick="generateTemplate('flying')">Generate Flying Type</button>
+    <button onclick="generateTemplate('psychic')">Generate Psychic Type</button>
+    <button onclick="generateTemplate('bug')">Generate Bug Type</button>
+    <button onclick="generateTemplate('rock')">Generate Rock Type</button>
+    <button onclick="generateTemplate('ghost')">Generate Ghost Type</button>
+    <button onclick="generateTemplate('dark')">Generate Dark Type</button>
+    <button onclick="generateTemplate('steel')">Generate Steel Type</button>
+    <button onclick="generateTemplate('dragon')">Generate Dragon Type</button>
+    <button onclick="generateTemplate('fairy')">Generate Fairy Type</button>
+
+    <textarea id="html-template" rows="10" cols="50"></textarea>
+
+    <script>
+        const excludedPokemon = [
+            'mewtwo',
+            'lugia',
+            'rayquaza',
+            // Add more excluded Pokemon names as needed
+        ];
+
+        function getAllPokemonTypes(callback) {
+            const url = 'https://pokeapi.co/api/v2/type/';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const allTypes = data.results.map(type => type.name);
+                    callback(allTypes);
+                })
+                .catch(error => console.error('Error fetching Pokemon types:', error));
+        }
+
+        function getRandomPokemon(type, count, callback) {
+            const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Filter out specific Pokemon names
+                    const filteredPokemons = data.pokemon
+                        .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+
+                    const randomPokemons = [];
+                    for (let i = 0; i < count; i++) {
+                        const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
+                        randomPokemons.push(randomPokemon);
+                    }
+                    callback(randomPokemons);
+                })
+                .catch(error => console.error('Error fetching Pokemon data:', error));
+        }
+
+        function generateTemplate(type) {
+            getRandomPokemon(type, 3, function (randomPokemons) {
+                displayTemplate(randomPokemons);
+            });
+        }
+
+        function displayTemplate(randomPokemons) {
+            const template = `
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Generated Pokemon</title>
+        <!-- Add your additional head content here -->
+    </head>
+    
+    <body>
+    
+        <h1>Your Generated Pokemon</h1>
+        
+        ${randomPokemons.map(pokemon => `
+            <img src="https://pokeapi.co/media/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}">
+        `).join('')}
+    
+        <!-- Add your additional body content here -->
+    
+    </body>
+    
+    </html>
+    `;
+
+            // Display in preview container
+            document.getElementById('image-preview').innerHTML = template;
+
+            // Display in textarea
+            document.getElementById('html-template').value = '';  // Clear the textarea
+        }
+    </script>
+
+</body>
+
+</html>
