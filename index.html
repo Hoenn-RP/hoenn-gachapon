@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Random Pokemon Generator</title>
+      <title>Random Pokemon Generator</title>
     <style>
         /* Add your styling here */
         body {
@@ -41,21 +41,6 @@
     <button onclick="generateTemplate('normal')">Generate Normal Type</button>
     <button onclick="generateTemplate('fire')">Generate Fire Type</button>
     <button onclick="generateTemplate('water')">Generate Water Type</button>
-    <button onclick="generateTemplate('electric')">Generate Electric Type</button>
-    <button onclick="generateTemplate('grass')">Generate Grass Type</button>
-    <button onclick="generateTemplate('ice')">Generate Ice Type</button>
-    <button onclick="generateTemplate('fighting')">Generate Fighting Type</button>
-    <button onclick="generateTemplate('poison')">Generate Poison Type</button>
-    <button onclick="generateTemplate('ground')">Generate Ground Type</button>
-    <button onclick="generateTemplate('flying')">Generate Flying Type</button>
-    <button onclick="generateTemplate('psychic')">Generate Psychic Type</button>
-    <button onclick="generateTemplate('bug')">Generate Bug Type</button>
-    <button onclick="generateTemplate('rock')">Generate Rock Type</button>
-    <button onclick="generateTemplate('ghost')">Generate Ghost Type</button>
-    <button onclick="generateTemplate('dark')">Generate Dark Type</button>
-    <button onclick="generateTemplate('steel')">Generate Steel Type</button>
-    <button onclick="generateTemplate('dragon')">Generate Dragon Type</button>
-    <button onclick="generateTemplate('fairy')">Generate Fairy Type</button>
     <!-- Add more type buttons as needed -->
 
     <textarea id="html-template" rows="10" cols="50"></textarea>
@@ -73,61 +58,62 @@
             }
         }
 
-        fetchExcludedPokemon();
-
-        function getAllPokemonTypes(callback) {
+        async function getAllPokemonTypes(callback) {
             const url = 'https://pokeapi.co/api/v2/type/';
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const allTypes = data.results.map(type => type.name);
-                    callback(allTypes);
-                })
-                .catch(error => console.error('Error fetching Pokemon types:', error));
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const allTypes = data.results.map(type => type.name);
+                callback(allTypes);
+            } catch (error) {
+                console.error('Error fetching Pokemon types:', error);
+            }
         }
 
-        function getRandomPokemon(type, count, callback) {
+        async function getRandomPokemon(type, count, callback) {
             const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    // Filter out specific Pokémon names
-                    const filteredPokemons = data.pokemon
-                        .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                // Filter out specific Pokémon names
+                const filteredPokemons = data.pokemon
+                    .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
 
-                    const randomPokemons = [];
-                    while (randomPokemons.length < count) {
-                        const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
-                        if (!randomPokemons.some(pokemon => pokemon.name === randomPokemon.name)) {
-                            randomPokemons.push(randomPokemon);
-                        }
+                const randomPokemons = [];
+                while (randomPokemons.length < count) {
+                    const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
+                    if (!randomPokemons.some(pokemon => pokemon.name === randomPokemon.name)) {
+                        randomPokemons.push(randomPokemon);
                     }
-                    callback(randomPokemons);
-                })
-                .catch(error => console.error('Error fetching Pokemon data:', error));
+                }
+                callback(randomPokemons);
+            } catch (error) {
+                console.error('Error fetching Pokemon data:', error);
+            }
         }
 
-        function generateTemplate(type) {
+        async function generateTemplate(type) {
+            await fetchExcludedPokemon(); // Wait for excluded Pokémon to be fetched
             if (type === 'all') {
-                getAllPokemonTypes(function (allTypes) {
+                await getAllPokemonTypes(async function (allTypes) {
                     const generatedPokemon = [];
-                    allTypes.forEach(pokemonType => {
-                        getRandomPokemon(pokemonType, 1, function (randomPokemons) {
+                    for (const pokemonType of allTypes) {
+                        await getRandomPokemon(pokemonType, 1, async function (randomPokemons) {
                             generatedPokemon.push(...randomPokemons);
                             if (generatedPokemon.length === allTypes.length) {
-                                displayTemplate(generatedPokemon);
+                                await displayTemplate(generatedPokemon);
                             }
                         });
-                    });
+                    }
                 });
             } else {
-                getRandomPokemon(type, 3, function (randomPokemons) {
-                    displayTemplate(randomPokemons);
+                await getRandomPokemon(type, 3, async function (randomPokemons) {
+                    await displayTemplate(randomPokemons);
                 });
             }
         }
 
-        function displayTemplate(randomPokemons) {
+        async function displayTemplate(randomPokemons) {
             const template = `
     <!DOCTYPE html>
     <html lang="en">
