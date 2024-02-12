@@ -63,15 +63,15 @@
         // Fetch excluded Pokémon names from JSON
         let excludedPokemon = [];
 
-        async function fetchExcludedPokemon() {
-            try {
-                const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excluded-pokemon.json');
-                const data = await response.json();
-                excludedPokemon = data;
-            } catch (error) {
-                console.error('Error fetching excluded Pokémon:', error);
-            }
-        }
+async function fetchExcludedPokemon() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excluded-pokemon.json');
+        const data = await response.json();
+        excludedPokemon = data.excludedPokemon;
+    } catch (error) {
+        console.error('Error fetching excluded Pokémon:', error);
+    }
+}
 
         async function getAllPokemonTypes(callback) {
             const url = 'https://pokeapi.co/api/v2/type/';
