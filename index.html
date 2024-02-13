@@ -90,7 +90,7 @@
             let count = 3;
 
             function getRandomForType(type) {
-                getRandomPokemon(type, count, function (randomPokemons) {
+                getRandomPokemon(type, 1, function (randomPokemons) {
                     allRandomPokemons.push(...randomPokemons);
 
                     if (allRandomPokemons.length === count * allTypes.length) {
@@ -160,4 +160,3 @@
 
 </body>
 </html>
-
