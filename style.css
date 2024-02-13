@@ -122,6 +122,7 @@ body {
   text-transform: uppercase;
   font: 800 20px Poppins;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .pokegacha {
