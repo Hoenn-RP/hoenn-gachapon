@@ -1,3 +1,6 @@
-{
-  "excluded": ["unown", "wooper"]
-}
+[
+    "kyurem",
+    "articuno",
+    "regice"
+    // Add more excluded Pokemon names as needed
+]
