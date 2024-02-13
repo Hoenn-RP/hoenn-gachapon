@@ -3,73 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Template Generator</title>
-    <style>
-        /* Add your CSS styles here */
-        #preview {
-            max-width: 400px;
-            margin: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Pokemon Generator</title>
 </head>
 <body>
-    <h1>Image Template Generator</h1>
+    <h1>Pokemon Generator</h1>
+    
+    <div id="options">
+        <button onclick="generatePokemon('all')">All</button>
+        <button onclick="generatePokemon('fire')">Fire</button>
+        <button onclick="generatePokemon('water')">Water</button>
+        <!-- Add more type buttons as needed -->
+    </div>
 
-    <!-- Buttons to select different JSON pools -->
-    <button onclick="loadImages('all.json')">All</button>
-    <button onclick="loadImages('fire.json')">Fire</button>
-    <button onclick="loadImages('grass.json')">Grass</button>
-     <button onclick="loadImages('water.json')">Water</button>
-    <!-- Add more buttons for additional pools -->
+    <div id="preview">
+        <h2>Preview:</h2>
+        <div id="pokemon-preview"></div>
+    </div>
 
-    <!-- Preview section -->
-    <div id="preview"></div>
+    <textarea id="output" readonly></textarea>
 
-    <!-- Form for copying the generated template -->
-    <form>
-        <label for="template">Generated Template:</label>
-        <textarea id="template" rows="4" cols="50" readonly></textarea>
-    </form>
-
-    <script>
-        // Function to load images from JSON
-        function loadImages(jsonFileName) {
-            // Replace 'fetch' with your preferred method to load JSON data
-            fetch(`/hoenn-gachapon/${jsonFileName}`)
-                .then(response => response.json())
-                .then(data => generateTemplate(data))
-                .catch(error => console.error('Error loading JSON:', error));
-        }
-
-        // Function to generate template from JSON data
-        function generateTemplate(data) {
-            // Shuffle the images array to ensure randomness
-            const shuffledImages = shuffleArray(data.images);
-
-            // Select the first 3 images from the shuffled array
-            const selectedImages = shuffledImages.slice(0, 3);
-
-            // Update preview
-            const previewElement = document.getElementById('preview');
-            previewElement.innerHTML = selectedImages.map(image => `
-                <img src="${image.url}" alt="${image.title}">
-            `).join('');
-
-            // Update generated template in the form
-            const templateElement = document.getElementById('template');
-            templateElement.value = selectedImages.map(image => `
-                <img src="${image.url}" alt="${image.title}">
-            `).join('');
-        }
-
-        // Function to shuffle an array (Fisher-Yates algorithm)
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-    </script>
+    <script src="pokeapi.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
