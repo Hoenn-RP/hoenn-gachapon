@@ -86,7 +86,13 @@
         });
     }
 
-                function displayTemplate(randomPokemons) {
+        function generateTemplate(type) {
+            getRandomPokemon(type, 3, function (randomPokemons) {
+                displayTemplate(randomPokemons);
+            });
+        }
+
+        function displayTemplate(randomPokemons) {
             const preview = `
 <!DOCTYPE html>
 <html lang="en">
