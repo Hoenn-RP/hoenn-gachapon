@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewContainer = document.getElementById('pokemon-preview');
     const outputTextArea = document.getElementById('output');
 
+    function addButtonListener(type) {
+        const button = document.getElementById(`${type}Btn`);
+        button.addEventListener('click', () => generatePokemon(type));
+    }
+
     async function generatePokemon(type) {
         const pokemon1 = await getRandomPokemon(type);
         const pokemon2 = await getRandomPokemon(type);
@@ -24,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ${pokemon3.name}
         `;
     }
+
+    // Add event listeners to buttons
+    addButtonListener('all');
+    addButtonListener('fire');
+    addButtonListener('water');
+    // Add more types as needed
 
     // Initial generation on page load
     generatePokemon('all');
