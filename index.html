@@ -5,33 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
     <link rel="stylesheet" href="https://hoenn-rp.github.io/hoenn-gachapon/styles/style.css">
+    <link href="https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/icons.css" rel="stylesheet">
     <title>Hoenn Gachapon</title>
 </head>
 <body>
 
     <h1>Hoenn Gachapon</h1>
 
-    <!-- Buttons for different Pokemon types -->
-    <button onclick="generateTemplate('normal')">Generate Normal Type</button>
-    <button onclick="generateTemplate('fire')">Generate Fire Type</button>
-    <button onclick="generateTemplate('water')">Generate Water Type</button>
-    <button onclick="generateTemplate('electric')">Generate Electric Type</button>
-    <button onclick="generateTemplate('grass')">Generate Grass Type</button>
-    <button onclick="generateTemplate('ice')">Generate Ice Type</button>
-    <button onclick="generateTemplate('fighting')">Generate Fighting Type</button>
-    <button onclick="generateTemplate('poison')">Generate Poison Type</button>
-    <button onclick="generateTemplate('ground')">Generate Ground Type</button>
-    <button onclick="generateTemplate('flying')">Generate Flying Type</button>
-    <button onclick="generateTemplate('psychic')">Generate Psychic Type</button>
-    <button onclick="generateTemplate('bug')">Generate Bug Type</button>
-    <button onclick="generateTemplate('rock')">Generate Rock Type</button>
-    <button onclick="generateTemplate('ghost')">Generate Ghost Type</button>
-    <button onclick="generateTemplate('dark')">Generate Dark Type</button>
-    <button onclick="generateTemplate('steel')">Generate Steel Type</button>
-    <button onclick="generateTemplate('dragon')">Generate Dragon Type</button>
-    <button onclick="generateTemplate('fairy')">Generate Fairy Type</button>
+    <div class="buttonselection">
+        <button onclick="generateTemplate('normal')">Generate Normal Type</button>
+        <button onclick="generateTemplate('fire')">Generate Fire Type</button>
+        <button onclick="generateTemplate('water')">Generate Water Type</button>
+        <button onclick="generateTemplate('electric')">Generate Electric Type</button>
+        <button onclick="generateTemplate('grass')">Generate Grass Type</button>
+        <button onclick="generateTemplate('ice')">Generate Ice Type</button>
+        <button onclick="generateTemplate('fighting')">Generate Fighting Type</button>
+        <button onclick="generateTemplate('poison')">Generate Poison Type</button>
+        <button onclick="generateTemplate('ground')">Generate Ground Type</button>
+        <button onclick="generateTemplate('flying')">Generate Flying Type</button>
+        <button onclick="generateTemplate('psychic')">Generate Psychic Type</button>
+        <button onclick="generateTemplate('bug')">Generate Bug Type</button>
+        <button onclick="generateTemplate('rock')">Generate Rock Type</button>
+        <button onclick="generateTemplate('ghost')">Generate Ghost Type</button>
+        <button onclick="generateTemplate('dark')">Generate Dark Type</button>
+        <button onclick="generateTemplate('steel')">Generate Steel Type</button>
+        <button onclick="generateTemplate('dragon')">Generate Dragon Type</button>
+        <button onclick="generateTemplate('fairy')">Generate Fairy Type</button>
+        <button onclick="generateTemplate('all')">Generate All Types</button> <!-- Added "All" button -->
+    </div>
 
-        <div id="preview-container">
+    <div id="preview-container">
         <h2>Preview</h2>
         <div id="image-preview"></div>
     </div>
@@ -39,41 +42,66 @@
     <textarea id="html-template" rows="10" cols="50"></textarea>
 
     <script>
-    // Fetch excluded Pokemon list from JSON file
-    const excludedPokemonUrl = 'https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excludedPokemon.json';
+        // Fetch excluded Pokemon list from JSON file
+        const excludedPokemonUrl = 'https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excludedPokemon.json';
 
-    function fetchExcludedPokemon(callback) {
-        fetch(excludedPokemonUrl)
-            .then(response => response.json())
-            .then(data => callback(data))
-            .catch(error => console.error('Error fetching excluded Pokemon:', error));
-    }
-
-    function getRandomPokemon(type, count, callback) {
-        fetchExcludedPokemon(excludedPokemon => {
-            const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
-            fetch(url)
+        function fetchExcludedPokemon(callback) {
+            fetch(excludedPokemonUrl)
                 .then(response => response.json())
-                .then(data => {
-                    // Filter out excluded Pokemon names
-                    const filteredPokemons = data.pokemon
-                        .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+                .then(data => callback(data))
+                .catch(error => console.error('Error fetching excluded Pokemon:', error));
+        }
 
-                    const randomPokemons = [];
-                    for (let i = 0; i < count; i++) {
-                        const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
-                        randomPokemons.push(randomPokemon);
-                    }
-                    callback(randomPokemons);
-                })
-                .catch(error => console.error('Error fetching Pokemon data:', error));
-        });
-    }
+        function getRandomPokemon(type, count, callback) {
+            fetchExcludedPokemon(excludedPokemon => {
+                const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Filter out excluded Pokemon names
+                        const filteredPokemons = data.pokemon
+                            .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+
+                        const randomPokemons = [];
+                        for (let i = 0; i < count; i++) {
+                            const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
+                            randomPokemons.push(randomPokemon);
+                        }
+                        callback(randomPokemons);
+                    })
+                    .catch(error => console.error('Error fetching Pokemon data:', error));
+            });
+        }
 
         function generateTemplate(type) {
-            getRandomPokemon(type, 3, function (randomPokemons) {
-                displayTemplate(randomPokemons);
-            });
+            if (type.toLowerCase() === 'all') {
+                generateAllTypes();
+            } else {
+                getRandomPokemon(type, 3, function (randomPokemons) {
+                    displayTemplate(randomPokemons);
+                });
+            }
+        }
+
+        function generateAllTypes() {
+            const allTypes = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dark', 'steel', 'dragon', 'fairy'];
+
+            const allRandomPokemons = [];
+            let count = 3;
+
+            function getRandomForType(type) {
+                getRandomPokemon(type, count, function (randomPokemons) {
+                    allRandomPokemons.push(...randomPokemons);
+
+                    if (allRandomPokemons.length === count * allTypes.length) {
+                        displayTemplate(allRandomPokemons);
+                    }
+                });
+            }
+
+            for (let i = 0; i < allTypes.length; i++) {
+                getRandomForType(allTypes[i]);
+            }
         }
 
         function displayTemplate(randomPokemons) {
@@ -99,7 +127,7 @@
 </body>
 </html>
 `;
-         const template = `
+            const template = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,3 +160,4 @@
 
 </body>
 </html>
+
