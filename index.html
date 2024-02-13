@@ -86,14 +86,8 @@
         });
     }
 
-        function generateTemplate(type) {
-            getRandomPokemon(type, 3, function (randomPokemons) {
-                displayTemplate(randomPokemons);
-            });
-        }
-
-        function displayTemplate(randomPokemons) {
-            const template = `
+                function displayTemplate(randomPokemons) {
+            const preview = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,12 +109,34 @@
 </body>
 </html>
 `;
+         const template = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Generated Pokemon</title>
+    <!-- Add your additional head content here -->
+</head>
+<body>
+
+    <h1>Your Generated Pokemon</h1>
+    
+    ${randomPokemons.map(pokemon => `
+        [img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}"]
+    `).join('')}
+
+    <!-- Add your additional body content here -->
+
+</body>
+</html>
+`;
 
             // Display in preview container
-            document.getElementById('image-preview').innerHTML = template;
+            document.getElementById('image-preview').innerHTML = preview;
 
             // Display in textarea
-            document.getElementById('html-template').value = '';  // Clear the textarea
+            document.getElementById('html-template').value = template;  // Clear the textarea
         }
     </script>
 
