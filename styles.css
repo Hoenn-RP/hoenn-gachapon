@@ -6,11 +6,11 @@ body {
 .title {
   color: #aaa;
   text-align: center;
-  font:800 50px Roboto;
+  font: 800 50px Roboto;
   background: linear-gradient(to bottom right, #7dabe3, #85ccca);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-transform:lowercase;
+  text-transform: lowercase;
   line-height: 100px;
 }
 
@@ -32,8 +32,8 @@ body {
   margin: auto;
   width: 788px;
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -42,73 +42,73 @@ body {
   border: 1px solid #232323;
   background: #2b2b2b;
   color: #aaa;
-  font-size:20px;
+  font-size: 20px;
   height: 30px;
   border-radius: 5px;
   padding-top: 4px;
-  padding-right:5px;
-  padding-left:5px; 
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .preview-container {
-  margin:auto;
+  margin: auto;
   width: 746px;
-  height: 500px;
+  height: 389px;
   border: 1px solid #232323;
   border-radius: 10px;
   background: #303030;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding:20px;
+  padding: 20px;
 }
 .preview-container h1 {
-  text-align:center;
-  margin-top:-10px;
+  text-align: center;
+  margin-top: -10px;
   color: #aaa;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font: 800 10px Poppins;
   line-height: 10px;
   letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #html-template {
   height: 180px;
   width: 766px;
-  margin-:auto;
+  margin-: auto;
   background: #303030;
   color: #aaa;
   box-sizing: border-box;
   resize: none;
   overflow: auto;
-  border:0px;
+  border: 0px;
 }
 #html-template::-webkit-scrollbar {
-    width: 1px; 
+  width: 1px;
 }
 
 #html-template::-webkit-scrollbar-thumb {
-    background-color: #aaa;
+  background-color: #aaa;
 }
 
 #html-template::-webkit-scrollbar-track {
-    background-color: #303030;
+  background-color: #303030;
 }
 
 .copyarea {
-  margin:auto;
+  margin: auto;
   width: 766px;
   height: 180px;
-  padding:10px;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid #232323;
   background-color: #303030;
 }
 
 .copybutton {
-  width:788px;
-  margin:auto;
-  margin-top:10px;
+  width: 788px;
+  margin: auto;
+  margin-top: 10px;
 }
 
 .copybutton button {
@@ -118,7 +118,175 @@ body {
   color: #aaa;
   padding: 10px;
   width: 788px;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font: 800 20px Poppins;
-  letter-spacing:1px;
+  letter-spacing: 1px;
+}
+
+.pokegacha {
+  margin: auto;
+  border: 1px solid #232323;
+  outline: 2px solid #333;
+  width: 520px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  background-color: #2b2b2b;
+  color: #aaa;
+  background-image: url(https://image.ibb.co/cpf8Wc/flower_patt.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  margin-bottom: 40px;
+}
+
+.pokegachabar {
+  width: 496px;
+  padding: 10px 12px;
+  background-color: #272727;
+  font: bold 9px Quattrocento Sans;
+  line-height: 10px;
+  height: 10px;
+  background-image: url(https://image.ibb.co/dMFuMc/flower.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  margin-left: -20px;
+  margin-top: -20px;
+  text-align: left;
+  text-transform: uppercase;
+  padding-right: 12px;
+  border-bottom: 1px solid #232323;
+}
+
+.pokegachabar i {
+  float: left;
+  font-size: 16px;
+  margin-top: -3px;
+  margin-right: 5px;
+  margin-left: -5px;
+  background: linear-gradient(to bottom right, #7dabe3, #85ccca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pokegachabar div {
+  float: right;
+  margin: -2px -2px -2px 5px;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+  font-size: 7px;
+  line-height: 12px;
+  text-align: center;
+  background-color: #2b2b2b;
+  cursor: pointer;
+  border: solid 1px #232323;
+}
+
+.pokegachasmmn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 202px;
+  gap: 40px;
+}
+
+.pokegachabox {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  background: rgb(255, 255, 255, 0.025);
+  border: 1px solid rgb(255, 255, 255, 0.05);
+}
+.pokegachabox:hover {
+  animation-name: gachapush;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+/* Push */
+@keyframes gachapush {
+  50% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pokegachabox img {
+  filter: drop-shadow(2px 2px #232323);
+  height: 96px;
+  width: 96px;
+}
+
+.pokegachabtm {
+  display: flex;
+  width: 476px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.pokegachabtm a {
+  text-decoration: none;
+}
+
+.pokegachabttn {
+  width: 150px;
+  height: 48px;
+  position: relative;
+  background-color: #272727;
+  border: 1px solid #232323;
+  border-radius: 48px;
+  font: 800 15px Poppins;
+  color: #666;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 48px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.pokegachabttn span {
+  position: relative;
+  z-index: 10;
+}
+
+.pokegachabttn2 {
+  height: 48px;
+  width: 150px;
+  background: linear-gradient(to bottom right, #7dabe3, #85ccca);
+  position: absolute;
+  margin-top: 48px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.pokegachabttn:hover .pokegachabttn2 {
+  margin-top: 0px;
+}
+
+.pokegachabttn:hover {
+  color: #272727;
 }
