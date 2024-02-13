@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
-    <link rel="stylesheet" href="https://hoenn-rp.github.io/hoenn-gachapon/styles/styles.css">
+    <link rel="stylesheet" href="https://hoenn-rp.github.io/hoenn-gachapon/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Loto&family=Montserrat&family=Quattrocento+Sans&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/icons.css" rel="stylesheet">
     <title>Hoenn Gachapon</title>
 </head>
 <body>
 
-    <h1>Hoenn Gachapon</h1>
+  <div class="titlebar"><div class="title">Hoenn Gachapon</div></div>
 
     <div class="buttonselection">
-      <button onclick="generateTemplate('normal')"><i class="icon-normal"></i></button>
-    <button onclick="generateTemplate('fire')"><i class="icon-fire"></i></button>
-    <button onclick="generateTemplate('water')"><i class="icon-water"></i></button>
-    <button onclick="generateTemplate('electric')"><i class="icon-electric"></i></button>
-    <button onclick="generateTemplate('grass')"><i class="icon-grasstype"></i></button>
-    <button onclick="generateTemplate('ice')"><i class="icon-ice"></i></button>
-    <button onclick="generateTemplate('fighting')"><i class="icon-fighting"></i></button>
-    <button onclick="generateTemplate('poison')"><i class="icon-poison"></i></button>
-    <button onclick="generateTemplate('ground')"><i class="icon-ground"></i></button>
-    <button onclick="generateTemplate('flying')"><i class="icon-flying"></i></button>
-    <button onclick="generateTemplate('psychic')"><i class="icon-psychic"></i></button>
-    <button onclick="generateTemplate('bug')"><i class="icon-bug"></i></button>
-    <button onclick="generateTemplate('rock')"><i class="icon-rock"></i></button>
-    <button onclick="generateTemplate('ghost')"><i class="icon-ghost"></i></button>
-    <button onclick="generateTemplate('dark')"><i class="icon-dark"></i></button>
-    <button onclick="generateTemplate('steel')"><i class="icon-steel"></i></button>
-    <button onclick="generateTemplate('dragon')"><i class="icon-dragon"></i></button>
-    <button onclick="generateTemplate('fairy')"><i class="icon-fairy"></i></button>
-    <button onclick="generateTemplate('all')"><i class="icon-ball"></i></button>
+    <button onclick="generateTemplate('all')"><div style="color:#f2495d;"><i class="icon-ball"></i></div></button>
+    <button onclick="generateTemplate('normal')"><div style="color:#aaa;"><i class="icon-normal"></i></div></button>
+    <button onclick="generateTemplate('fire')"><div style="color:#ff9c54;"><i class="icon-fire"></i></div></button>
+    <button onclick="generateTemplate('water')"><div style="color:#4d90d5;"><i class="icon-water"></i></div></button>
+    <button onclick="generateTemplate('electric')"><div style="color:#f3d23b;"><i class="icon-electric"></div></i></button>
+    <button onclick="generateTemplate('grass')"><div style="color:#63bb5b;"><i class="icon-grasstype"></i></div></button>
+    <button onclick="generateTemplate('ice')"><div style="color:#74cec0;"><i class="icon-ice"></i></div></button>
+    <button onclick="generateTemplate('fighting')"><div style="color:#ce4069;"><i class="icon-fighting"></div></i></button>
+    <button onclick="generateTemplate('poison')"><div style="color:#ab6ac8;"><i class="icon-poison"></i></div></button>
+    <button onclick="generateTemplate('ground')"><div style="color:#d97746;"><i class="icon-ground"></i></div></button>
+    <button onclick="generateTemplate('flying')"><div style="color:#8fa8dd;"><i class="icon-flying"></i></div></button>
+    <button onclick="generateTemplate('psychic')"><div style="color:#f97176;"><i class="icon-psychic"></i></div></button>
+    <button onclick="generateTemplate('bug')"><div style="color:#90c12c;"><i class="icon-bug"></i></div></button>
+    <button onclick="generateTemplate('rock')"><div style="color:#c7b78b;"><i class="icon-rock"></i></div></button>
+    <button onclick="generateTemplate('ghost')"><div style="color:#5269ac;"><i class="icon-ghost"></i></div></button>
+    <button onclick="generateTemplate('dark')"><div style="color:#5a5366;"><i class="icon-dark"></i></div></button>
+    <button onclick="generateTemplate('steel')"><div style="color:#5a8ea1;"><i class="icon-steel"></i></div></button>
+    <button onclick="generateTemplate('dragon')"><div style="color:#0a6dc4;"><i class="icon-dragon"></i></div></button>
+    <button onclick="generateTemplate('fairy')"><div style="color:#ec8fe6;"><i class="icon-fairy"></i></div></button>
   </div>
 
-    <div id="preview-container">
-        <h2>Preview</h2>
+    <div class="preview-container">
+        <h1>Preview</h1>
         <div id="image-preview"></div>
     </div>
 
-    <textarea id="html-template" rows="10" cols="50"></textarea>
+  <div class="copyarea"><textarea id="html-template"></textarea></div>
+  <div class="copybutton"><button onclick="copyTemplate()">Copy Code</button></div>
 
     <script>
         // Fetch excluded Pokemon list from JSON file
@@ -53,20 +54,21 @@
                 .catch(error => console.error('Error fetching excluded Pokemon:', error));
         }
 
-        function getRandomPokemon(type, count, callback) {
+        function getRandomPokemon(type, count, callback, excluded) {
             fetchExcludedPokemon(excludedPokemon => {
                 const url = `https://pokeapi.co/api/v2/type/${type.toLowerCase()}/`;
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
-                        // Filter out excluded Pokemon names
+                        // Filter out excluded Pokemon names and already selected Pokemon
                         const filteredPokemons = data.pokemon
-                            .filter(entry => !excludedPokemon.includes(entry.pokemon.name));
+                            .filter(entry => !excludedPokemon.includes(entry.pokemon.name) && !excluded.includes(entry.pokemon.name));
 
                         const randomPokemons = [];
                         for (let i = 0; i < count; i++) {
-                            const randomPokemon = filteredPokemons[Math.floor(Math.random() * filteredPokemons.length)].pokemon;
+                            const randomPokemon = filteredPokemons.splice(Math.floor(Math.random() * filteredPokemons.length), 1)[0];
                             randomPokemons.push(randomPokemon);
+                            excluded.push(randomPokemon.pokemon.name);
                         }
                         callback(randomPokemons);
                     })
@@ -80,7 +82,7 @@
             } else {
                 getRandomPokemon(type, 3, function (randomPokemons) {
                     displayTemplate(randomPokemons);
-                });
+                }, []);
             }
         }
 
@@ -90,21 +92,22 @@
             const allRandomPokemons = [];
             let count = 3;
 
-            function getRandomForType(type) {
+            function getRandomForType(type, excluded) {
                 getRandomPokemon(type, 1, function (randomPokemons) {
                     allRandomPokemons.push(...randomPokemons);
+                    excluded.push(randomPokemons[0].pokemon.name);
 
                     if (allRandomPokemons.length === count) {
                         displayTemplate(allRandomPokemons);
                     }
-                });
+                }, excluded);
             }
 
             // Shuffle the types to get a random order
             const shuffledTypes = allTypes.sort(() => Math.random() - 0.5);
 
             for (let i = 0; i < count; i++) {
-                getRandomForType(shuffledTypes[i]);
+                getRandomForType(shuffledTypes[i], []);
             }
         }
 
@@ -116,17 +119,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Generated Pokemon</title>
-    <!-- Add your additional head content here -->
 </head>
 <body>
 
     <h1>Your Generated Pokemon</h1>
     
     ${randomPokemons.map(pokemon => `
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}">
     `).join('')}
 
-    <!-- Add your additional body content here -->
 
 </body>
 </html>
@@ -138,17 +139,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Generated Pokemon</title>
-    <!-- Add your additional head content here -->
+    
 </head>
 <body>
 
     <h1>Your Generated Pokemon</h1>
     
     ${randomPokemons.map(pokemon => `
-        [img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" alt="${pokemon.name}" title="${pokemon.name}"]
+        [img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"]
     `).join('')}
-
-    <!-- Add your additional body content here -->
 
 </body>
 </html>
@@ -160,8 +159,22 @@
             // Display in textarea
             document.getElementById('html-template').value = template;  // Clear the textarea
         }
+
+        function copyTemplate() {
+            // Get the textarea element
+            const textarea = document.getElementById('html-template');
+
+            // Select the text inside the textarea
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text to the clipboard
+            document.execCommand('copy');
+
+            // Deselect the text
+            textarea.setSelectionRange(0, 0);
+        }
     </script>
 
 </body>
 </html>
-
