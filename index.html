@@ -88,7 +88,6 @@
   <div class="copybutton"><button onclick="copyTemplate()">Copy Code</button></div>
 
   <script>
-    // Fetch excluded Pokemon list from JSON file
     const excludedPokemonUrl = 'https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/excludedPokemon.json';
 
     function fetchExcludedPokemon(callback) {
@@ -104,7 +103,6 @@
         fetch(url)
           .then(response => response.json())
           .then(data => {
-            // Filter out excluded Pokemon names and already selected Pokemon
             const filteredPokemons = data.pokemon
               .filter(entry => !excludedPokemon.includes(entry.pokemon.name) && !excluded.includes(entry.pokemon.name));
             const randomPokemons = [];
@@ -160,7 +158,7 @@
     <div class="pokegachasmmn">
   
           ${randomPokemons.map(pokemon => `
-        <div class="pokegachabox"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"></div>
+        <div class="pokegachabox"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"><div class="pokegachaname">${pokemon.pokemon.name}</div></div>
     `).join('')}
            
     </div>
@@ -182,7 +180,7 @@
   [div][attr="class","pokegachasmmn"]
 
 ${randomPokemons.map(pokemon => `
-        [div][attr="class","pokegachabox"][img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"][/div]
+        [div][attr="class","pokegachabox"][img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"][div][attr="class","pokegachaname"]${pokemon.pokemon.name}[/div][/div]
     `).join('')}
 
   [/div]
@@ -209,7 +207,7 @@ ${randomPokemons.map(pokemon => `
     <div class="pokegachasmmn">
   
           ${randomPokemons.map(pokemon => `
-        <div class="pokegachabox"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"></div>
+        <div class="pokegachabox"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"><div class="pokegachaname">${pokemon.pokemon.name}</div></div>
     `).join('')}
            
     </div>
@@ -230,7 +228,7 @@ ${randomPokemons.map(pokemon => `
   [div][attr="class","pokegachasmmn"]
     
     ${randomPokemons.map(pokemon => `
-        [div][attr="class","pokegachabox"][img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"][/div]
+        [div][attr="class","pokegachabox"][img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.url.split('/')[6]}.png" alt="${pokemon.pokemon.name}" title="${pokemon.pokemon.name}"][div][attr="class","pokegachaname"]${pokemon.pokemon.name}[/div][/div]
     `).join('')}
 
 [/div]
