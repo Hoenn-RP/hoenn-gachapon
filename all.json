@@ -12780,7 +12780,7 @@
 		]
 	},
 	{
-		"id": 10398,
+		"id": 10229,
 		"name": "Hisuian Growlithe",
 		"isNfe": true,
 		"types": [
@@ -12789,7 +12789,7 @@
 		]
 	},
 	{
-		"id": 10399,
+		"id": 10230,
 		"name": "Hisuian Arcanine",
 		"types": [
 			"fire",
@@ -12879,7 +12879,7 @@
 		]
 	},
 	{
-		"id": 10400,
+		"id": 10231,
 		"name": "Hisuian Voltorb",
 		"isNfe": true,
 		"types": [
@@ -12888,7 +12888,7 @@
 		]
 	},
 	{
-		"id": 10401,
+		"id": 10232,
 		"name": "Hisuian Electrode",
 		"types": [
 			"electric",
@@ -12952,7 +12952,7 @@
 		]
 	},
 	{
-		"id": 10402,
+		"id": 10233,
 		"name": "Hisuian Typhlosion",
 		"types": [
 			"fire",
@@ -12977,7 +12977,7 @@
 		]
 	},
 	{
-		"id": 10403,
+		"id": 10234,
 		"name": "Hisuian Qwilfish",
 		"isNfe": true,
 		"types": [
@@ -12986,7 +12986,7 @@
 		]
 	},
 	{
-		"id": 10404,
+		"id": 10235,
 		"name": "Hisuian Sneasel",
 		"isNfe": true,
 		"types": [
@@ -13021,7 +13021,7 @@
 		]
 	},
 	{
-		"id": 10405,
+		"id": 10236,
 		"name": "Hisuian Samurott",
 		"types": [
 			"water",
@@ -13029,7 +13029,7 @@
 		]
 	},
 	{
-		"id": 10406,
+		"id": 10237,
 		"name": "Hisuian Lilligant",
 		"types": [
 			"grass",
@@ -13037,7 +13037,7 @@
 		]
 	},
 	{
-		"id": 10416,
+		"id": 10247,
 		"name": "White-Striped Basculin",
 		"types": [
 			"water"
@@ -13068,7 +13068,7 @@
 		]
 	},
 	{
-		"id": 10407,
+		"id": 10238,
 		"name": "Hisuian Zorua",
 		"types": [
 			"normal",
@@ -13076,7 +13076,7 @@
 		]
 	},
 	{
-		"id": 10408,
+		"id": 10239,
 		"name": "Hisuian Zoroark",
 		"types": [
 			"normal",
@@ -13092,7 +13092,7 @@
 		]
 	},
 	{
-		"id": 10409,
+		"id": 10240,
 		"name": "Hisuian Braviary",
 		"types": [
 			"psychic",
@@ -13100,7 +13100,7 @@
 		]
 	},
 	{
-		"id": 10410,
+		"id": 10241,
 		"name": "Hisuian Sliggoo",
 		"isNfe": true,
 		"types": [
@@ -13109,7 +13109,7 @@
 		]
 	},
 	{
-		"id": 10411,
+		"id": 10242,
 		"name": "Hisuian Goodra",
 		"types": [
 			"steel",
@@ -13117,7 +13117,7 @@
 		]
 	},
 	{
-		"id": 10412,
+		"id": 10243,
 		"name": "Hisuian Avalugg",
 		"types": [
 			"ice",
@@ -13125,7 +13125,7 @@
 		]
 	},
 	{
-		"id": 10413,
+		"id": 10224,
 		"name": "Hisuian Decidueye",
 		"types": [
 			"grass",
