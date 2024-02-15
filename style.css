@@ -54,7 +54,7 @@ body {
 .preview-container {
   margin: auto;
   width: 746px;
-  height: 389px;
+  min-height: 389px;
   border: 1px solid #232323;
   border-radius: 10px;
   background: #303030;
@@ -140,7 +140,7 @@ body {
   background-image: url(https://image.ibb.co/cpf8Wc/flower_patt.png);
   background-repeat: no-repeat;
   background-position: bottom right;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .pokegachabar {
@@ -234,6 +234,7 @@ body {
   align-items: center;
   gap: 40px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .pokegachabttn {
@@ -284,3 +285,8 @@ body {
   color: #272727;
 }
 
+.pokegachatag {
+  font: 12px Roboto;
+  color:#d49736;
+  text-align:center;
+}
