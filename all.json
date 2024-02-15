@@ -12823,7 +12823,7 @@
 		]
 	},
 	{
-		"id": 10321,
+		"id": 10162,
 		"name": "Galarian Ponyta",
 		"isNfe": true,
 		"types": [
@@ -12831,7 +12831,7 @@
 		]
 	},
 	{
-		"id": 10322,
+		"id": 10163,
 		"name": "Galarian Rapidash",
 		"types": [
 			"psychic",
@@ -12839,7 +12839,7 @@
 		]
 	},
 	{
-		"id": 10323,
+		"id": 10164,
 		"name": "Galarian Slowpoke",
 		"isNfe": true,
 		"types": [
@@ -12847,7 +12847,7 @@
 		]
 	},
 	{
-		"id": 10324,
+		"id": 10165,
 		"name": "Galarian Slowbro",
 		"types": [
 			"poison",
@@ -12855,7 +12855,7 @@
 		]
 	},
 	{
-		"id": 10325,
+		"id": 10166,
 		"name": "Galarian Farfetch'd",
 		"isNfe": true,
 		"types": [
@@ -12912,7 +12912,7 @@
 		]
 	},
 	{
-		"id": 10326,
+		"id": 10167,
 		"name": "Galarian Weezing",
 		"types": [
 			"poison",
@@ -12920,7 +12920,7 @@
 		]
 	},
 	{
-		"id": 10327,
+		"id": 10168,
 		"name": "Galarian Mr. Mime",
 		"isNfe": true,
 		"types": [
@@ -12929,14 +12929,14 @@
 		]
 	},
 	{
-		"id": 10419,
+		"id": 10250,
 		"name": "Tauros Combat Breed",
 		"types": [
 			"fighting"
 		]
 	},
 	{
-		"id": 10420,
+		"id": 10251,
 		"name": "Tauros Blaze Breed",
 		"types": [
 			"fighting",
@@ -12944,7 +12944,7 @@
 		]
 	},
 	{
-		"id": 10421,
+		"id": 10252,
 		"name": "Tauros Aqua Breed",
 		"types": [
 			"fighting",
@@ -12960,7 +12960,7 @@
 		]
 	},
 	{
-		"id": 10422,
+		"id": 10253,
 		"name": "Paldean Wooper",
 		"isNfe": true,
 		"types": [
@@ -12969,7 +12969,7 @@
 		]
 	},
 	{
-		"id": 10331,
+		"id": 10172,
 		"name": "Galarian Slowking",
 		"types": [
 			"poison",
@@ -12995,7 +12995,7 @@
 		]
 	},
 	{
-		"id": 10332,
+		"id": 10173,
 		"name": "Galarian Corsola",
 		"isNfe": true,
 		"types": [
@@ -13003,7 +13003,7 @@
 		]
 	},
 	{
-		"id": 10333,
+		"id": 10174,
 		"name": "Galarian Zigzagoon",
 		"isNfe": true,
 		"types": [
@@ -13012,7 +13012,7 @@
 		]
 	},
 	{
-		"id": 10334,
+		"id": 10175,
 		"name": "Galarian Linoone",
 		"isNfe": true,
 		"types": [
@@ -13044,7 +13044,7 @@
 		]
 	},
 	{
-		"id": 10335,
+		"id": 10176,
 		"name": "Galarian Darumaka",
 		"isNfe": true,
 		"types": [
@@ -13052,14 +13052,14 @@
 		]
 	},
 	{
-		"id": 10336,
+		"id": 10177,
 		"name": "Galarian Darmanitan",
 		"types": [
 			"ice"
 		]
 	},
 	{
-		"id": 10338,
+		"id": 10179,
 		"name": "Galarian Yamask",
 		"isNfe": true,
 		"types": [
@@ -13084,7 +13084,7 @@
 		]
 	},
 	{
-		"id": 10339,
+		"id": 10180,
 		"name": "Galarian Stunfisk",
 		"types": [
 			"ground",
