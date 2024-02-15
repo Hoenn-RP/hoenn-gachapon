@@ -1,5 +1,456 @@
 [
 	{
+    "id": 10091,
+    "name": "Alolan Rattata",
+    "isNfe": true,
+    "types": [
+        "dark",
+        "normal"
+    ]
+},
+{
+    "id": 10092,
+    "name": "Alolan Raticate",
+    "types": [
+        "dark",
+        "normal"
+    ]
+},
+{
+    "id": 10100,
+    "name": "Alolan Raichu",
+    "types": [
+        "electric",
+        "psychic"
+    ]
+},
+{
+    "id": 10203,
+    "name": "Alolan Sandshrew",
+    "isNfe": true,
+    "types": [
+        "ice",
+        "steel"
+    ]
+},
+{
+    "id": 10204,
+    "name": "Alolan Sandslash",
+    "types": [
+        "ice",
+        "steel"
+    ]
+},
+{
+    "id": 10205,
+    "name": "Alolan Vulpix",
+    "isNfe": true,
+    "types": [
+        "ice"
+    ]
+},
+{
+    "id": 10206,
+    "name": "Alolan Ninetales",
+    "types": [
+        "ice",
+        "fairy"
+    ]
+},
+{
+    "id": 10207,
+    "name": "Alolan Diglett",
+    "isNfe": true,
+    "types": [
+        "ground",
+        "steel"
+    ]
+},
+{
+    "id": 10208,
+    "name": "Alolan Dugtrio",
+    "types": [
+        "ground", 
+        "steel"
+    ]
+},
+{
+    "id": 10209,
+    "name": "Alolan Meowth",
+    "isNfe": true,
+    "types": [
+        "dark"
+    ]
+},
+{
+    "id": 10320,
+    "name": "Galarian Meowth",
+    "isNfe": true,
+    "types": [
+        "steel"
+    ]
+},
+{
+    "id": 10210,
+    "name": "Alolan Persian",
+    "types": [
+        "dark"
+    ]
+},
+{
+    "id": 10398,
+    "name": "Hisuian Growlithe",
+    "isNfe": true,
+    "types": [
+        "fire",
+        "rock"
+    ]
+},
+{
+    "id": 10399,
+    "name": "Hisuian Arcanine",
+    "types": [
+        "fire",
+        "rock"
+    ]
+},
+{
+    "id": 10211,
+    "name": "Alolan Geodude",
+    "isNfe": true,
+    "types": [
+        "rock",
+        "electric"
+    ]
+},
+{
+    "id": 10212,
+    "name": "Alolan Graveler",
+    "isNfe": true,
+    "types": [
+        "rock",
+        "electric"
+    ]
+},
+{
+    "id": 10213,
+    "name": "Alolan Golem",
+    "types": [
+        "rock",
+        "electric"
+    ]
+},
+{
+    "id": 10321,
+    "name": "Galarian Ponyta",
+    "isNfe": true,
+    "types": [
+        "psychic"
+    ]
+},
+{
+    "id": 10322,
+    "name": "Galarian Rapidash",
+    "types": [
+        "psychic",
+        "fairy"
+    ]
+},
+{
+    "id": 10323,
+    "name": "Galarian Slowpoke",
+    "isNfe": true,
+    "types": [
+        "psychic",
+    ]
+},
+{
+    "id": 10324,
+    "name": "Galarian Slowbro",
+    "types": [
+        "poison",
+        "psychic"
+    ]
+},
+{
+    "id": 10325,
+    "name": "Galarian Farfetch'd",
+    "isNfe": true,
+    "types": [
+        "fighting"
+    ]
+},
+{
+    "id": 10214,
+    "name": "Alolan Grimer",
+    "isNfe": true,
+    "types": [
+        "poison"
+    ]
+},
+{
+    "id": 10215,
+    "name": "Alolan Muk",
+    "types": [
+        "poison",
+        "dark"
+    ]
+},
+{
+    "id": 10400,
+    "name": "Hisuian Voltorb",
+    "isNfe": true,
+    "types": [
+        "electric",
+        "grass"
+    ]
+},
+{
+    "id": 10401,
+    "name": "Hisuian Electrode",
+    "types": [
+        "electric",
+        "grass"
+    ]
+},
+{
+    "id": 10216,
+    "name": "Alolan Exeggutor",
+    "types": [
+        "grass",
+        "dragon"
+    ]
+},
+{
+    "id": 10217,
+    "name": "Alolan Marowak",
+    "types": [
+        "fire",
+        "ghost"
+    ]
+},
+{
+    "id": 10326,
+    "name": "Galarian Weezing",
+    "types": [
+        "poison",
+        "fairy"
+    ]
+},
+{
+    "id": 10327,
+    "name": "Galarian Mr. Mime",
+    "isNfe": true,
+    "types": [
+        "ice",
+        "psychic"
+    ]
+},
+{
+    "id": 10419,
+    "name": "Tauros Combat Breed",
+    "types": [
+        "fighting"
+    ]
+},
+{
+    "id": 10420,
+    "name": "Tauros Blaze Breed",
+    "types": [
+        "fighting",
+        "fire"
+    ]
+},
+{
+    "id": 10421,
+    "name": "Tauros Aqua Breed",
+    "types": [
+        "fighting",
+        "water"
+    ]
+},
+{
+    "id": 10402,
+    "name": "Hisuian Typhlosion",
+    "types": [
+        "fire",
+        "ghost"
+    ]
+},
+{
+    "id": 10422,
+    "name": "Paldean Wooper",
+    "isNfe": true,
+    "types": [
+        "poison",
+        "ground"
+    ]
+},
+{
+    "id": 10331,
+    "name": "Galarian Slowking",
+    "types": [
+        "poison",
+        "psychic"
+    ]
+},
+{
+    "id": 10403,
+    "name": "Hisuian Qwilfish",
+    "isNfe": true,
+    "types": [
+        "dark",
+        "poison"
+    ]
+},
+{
+    "id": 10404,
+    "name": "Hisuian Sneasel",
+    "isNfe": true,
+    "types": [
+        "fighting",
+        "poison"
+    ]
+},
+{
+    "id": 10332,
+    "name": "Galarian Corsola",
+    "isNfe": true,
+    "types": [
+        "ghost"
+    ]
+},
+{
+    "id": 10333,
+    "name": "Galarian Zigzagoon",
+    "isNfe": true,
+    "types": [
+        "dark",
+        "normal"
+    ]
+},
+{
+    "id": 10334,
+    "name": "Galarian Linoone",
+    "isNfe": true,
+    "types": [
+        "dark",
+        "normal"
+    ]
+},
+{
+    "id": 10405,
+    "name": "Hisuian Samurott",
+    "types": [
+        "water",
+        "dark"
+    ]
+},
+{
+    "id": 10406,
+    "name": "Hisuian Lilligant",
+    "types": [
+        "grass",
+        "fighting"
+    ]
+},
+{
+    "id": 10416,
+    "name": "White-Striped Basculin",
+    "types": [
+        "water"
+    ]
+},
+{
+    "id": 10335,
+    "name": "Galarian Darumaka",
+    "isNfe": true,
+    "types": [
+        "ice"
+    ]
+},
+{
+    "id": 10336,
+    "name": "Galarian Darmanitan",
+    "types": [
+        "ice"
+    ]
+},
+{
+    "id": 10338,
+    "name": "Galarian Yamask",
+    "isNfe": true,
+    "types": [
+        "ground",
+        "ghost"
+    ]
+},
+{
+    "id": 10407,
+    "name": "Hisuian Zorua",
+    "types": [
+        "normal",
+        "ghost"
+    ]
+},
+{
+    "id": 10408,
+    "name": "Hisuian Zoroark",
+    "types": [
+        "normal",
+        "ghost"
+    ]
+},
+{
+    "id": 10339,
+    "name": "Galarian Stunfisk",
+    "types": [
+        "ground",
+        "steel"
+    ]
+},
+{
+    "id": 10409,
+    "name": "Hisuian Braviary",
+    "types": [
+        "psychic",
+        "flying"
+    ]
+},
+{
+    "id": 10410,
+    "name": "Hisuian Sliggoo",
+    "isNfe": true,
+    "types": [
+        "steel",
+        "dragon"
+    ],
+},
+{
+    "id": 10411,
+    "name": "Hisuian Goodra",
+    "types": [
+        "steel",
+        "dragon"
+    ]
+},
+{
+    "id": 10412,
+    "name": "Hisuian Avalugg",
+    "types": [
+        "ice",
+        "rock"
+    ]
+},
+{
+    "id": 10413,
+    "name": "Hisuian Decidueye",
+    "types": [
+        "grass",
+        "fighting"
+    ]
+},
+	{
 		"id": 1,
 		"name": "Bulbasaur",
 		"isNfe": true,
