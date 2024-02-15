@@ -18,90 +18,128 @@
   <div class="titlebar">
     <div class="title">Hoenn Gachapon</div>
   </div>
- 
 
-<div class="buttonselection">
-<button onclick="generateRandomPokemon()"><div style="color:#f2495d;"><i class="icon-ball"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('normal')"><div style="color:#aaa;"><i class="icon-normal"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('fighting')"><div style="color:#ce4069;"><i class="icon-fighting"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('flying')"><div style="color:#8fa8dd;"><i class="icon-flying"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('poison')"><div style="color:#ab6ac8;"><i class="icon-poison"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('ground')"><div style="color:#d97746;"><i class="icon-ground"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('rock')"><div style="color:#c7b78b;"><i class="icon-rock"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('bug')"><div style="color:#90c12c;"><i class="icon-bug"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('ghost')"><div style="color:#5269ac;"><i class="icon-ghost"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('steel')"><div style="color:#5a8ea1;"><i class="icon-steel"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('fire')"><div style="color:#ff9c54;"><i class="icon-fire"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('water')"><div style="color:#4d90d5;"><i class="icon-water"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('grass')"><div style="color:#63bb5b;"><i class="icon-grasstype"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('electric')"><div style="color:#f3d23b;"><i class="icon-electric"></div></i></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('psychic')"><div style="color:#f97176;"><i class="icon-psychic"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('ice')"><div style="color:#74cec0;"><i class="icon-ice"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('dragon')"><div style="color:#0a6dc4;"><i class="icon-dragon"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('dark')"><div style="color:#5a5366;"><i class="icon-dark"></i></div></button>
-<button onclick="generateRandomNonLegendaryNonNfePokemonByType('fairy')"><div style="color:#ec8fe6;"><i class="icon-fairy"></i></div></button>
+  <div class="number-input">
+    <div class="howmany"><label for="pokemonCount">How many gachapon tickets?</label></div>
+    <input type="number" id="pokemonCount" value="1" min="1" max="100">
+  </div>
+
+  <div class="buttonselection">
+    <button onclick="generateRandomAllTypesPokemon()">
+      <div style="color:#f2495d;"><i class="icon-ball"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('normal')">
+      <div style="color:#aaa;"><i class="icon-normal"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('fighting')">
+      <div style="color:#ce4069;"><i class="icon-fighting"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('flying')">
+      <div style="color:#8fa8dd;"><i class="icon-flying"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('poison')">
+      <div style="color:#ab6ac8;"><i class="icon-poison"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('ground')">
+      <div style="color:#d97746;"><i class="icon-ground"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('rock')">
+      <div style="color:#c7b78b;"><i class="icon-rock"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('bug')">
+      <div style="color:#90c12c;"><i class="icon-bug"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('ghost')">
+      <div style="color:#5269ac;"><i class="icon-ghost"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('steel')">
+      <div style="color:#5a8ea1;"><i class="icon-steel"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('fire')">
+      <div style="color:#ff9c54;"><i class="icon-fire"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('water')">
+      <div style="color:#4d90d5;"><i class="icon-water"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('grass')">
+      <div style="color:#63bb5b;"><i class="icon-grasstype"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('electric')">
+      <div style="color:#f3d23b;"><i class="icon-electric"></div></i>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('psychic')">
+      <div style="color:#f97176;"><i class="icon-psychic"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('ice')">
+      <div style="color:#74cec0;"><i class="icon-ice"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('dragon')">
+      <div style="color:#0a6dc4;"><i class="icon-dragon"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('dark')">
+      <div style="color:#5a5366;"><i class="icon-dark"></i></div>
+    </button>
+    <button onclick="generateRandomNonLegendaryNonNfePokemonByType('fairy')">
+      <div style="color:#ec8fe6;"><i class="icon-fairy"></i></div>
+    </button>
   </div>
 
   <div class="preview-container">
     <h1>Preview</h1>
-    <div id="preview"></div></div>
+    <div id="preview"></div>
+  </div>
   <div class="copyarea"><textarea id="output" oninput="updatePreview()"></textarea></div>
   <div class="copybutton"><button onclick="copyTemplate()">Copy to the clipboard</button></div>
 
-<script>
+  <script>
     async function fetchPokemonData() {
-        const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/all.json');
-        const data = await response.json();
-        return data;
+      const response = await fetch('https://raw.githubusercontent.com/Hoenn-RP/hoenn-gachapon/main/all.json');
+      const data = await response.json();
+      return data;
     }
 
     function getRandomNonLegendaryNonNfePokemon(data, count, type) {
-        const nonLegendaryNonNfePokemon = data.filter(pokemon => 
-            !pokemon.isLegendary && 
-            !pokemon.isNfe &&
-            !(pokemon.id >= 793 && pokemon.id <= 799) &&
-            !(pokemon.id >= 803 && pokemon.id <= 806) &&
-            !(pokemon.id >= 984 && pokemon.id <= 995) &&
-            ![1005, 1006, 1009, 1010, 1020, 1021, 1022, 1023, 1025].includes(pokemon.id) &&
-            (type ? pokemon.types.includes(type) : true)
-        );
-        
-        const uniqueRandomNonLegendaryNonNfePokemonArray = getRandomPokemon(nonLegendaryNonNfePokemon, count);
-        return uniqueRandomNonLegendaryNonNfePokemonArray;
+      const nonLegendaryNonNfePokemon = data.filter(pokemon =>
+        !pokemon.isLegendary &&
+        !pokemon.isNfe &&
+        !(pokemon.id >= 793 && pokemon.id <= 799) &&
+        !(pokemon.id >= 803 && pokemon.id <= 806) &&
+        !(pokemon.id >= 984 && pokemon.id <= 995) &&
+        ![1005, 1006, 1009, 1010, 1020, 1021, 1022, 1023, 1025].includes(pokemon.id) &&
+        (type ? pokemon.types.includes(type) : true)
+      );
+      const uniqueRandomNonLegendaryNonNfePokemonArray = getRandomPokemon(nonLegendaryNonNfePokemon, count);
+      return uniqueRandomNonLegendaryNonNfePokemonArray;
     }
 
     function getRandomNonLegendaryPokemon(data, count, type) {
-        const nonLegendaryPokemon = data.filter(pokemon => 
-            !pokemon.isLegendary && 
-            !(pokemon.id >= 793 && pokemon.id <= 799) &&
-            !(pokemon.id >= 803 && pokemon.id <= 806) &&
-            !(pokemon.id >= 984 && pokemon.id <= 995) &&
-            ![1005, 1006, 1009, 1010, 1020, 1021, 1022, 1023, 1025].includes(pokemon.id) &&
-            (!type || pokemon.types.includes(type))
-        );
-
-        const uniqueRandomNonLegendaryPokemonArray = getRandomPokemon(nonLegendaryPokemon, count);
-        return uniqueRandomNonLegendaryPokemonArray;
+      const nonLegendaryPokemon = data.filter(pokemon =>
+        !pokemon.isLegendary &&
+        !(pokemon.id >= 793 && pokemon.id <= 799) &&
+        !(pokemon.id >= 803 && pokemon.id <= 806) &&
+        !(pokemon.id >= 984 && pokemon.id <= 995) &&
+        ![1005, 1006, 1009, 1010, 1020, 1021, 1022, 1023, 1025].includes(pokemon.id) &&
+        (!type || pokemon.types.includes(type))
+      );
+      const uniqueRandomNonLegendaryPokemonArray = getRandomPokemon(nonLegendaryPokemon, count);
+      return uniqueRandomNonLegendaryPokemonArray;
     }
 
     function getRandomPokemon(data, count) {
-        const randomPokemonArray = [];
-        const usedIndexes = new Set();
-
-        while (randomPokemonArray.length < count) {
-            const randomIndex = Math.floor(Math.random() * data.length);
-
-            if (!usedIndexes.has(randomIndex)) {
-                usedIndexes.add(randomIndex);
-                randomPokemonArray.push(data[randomIndex]);
-            }
+      const randomPokemonArray = [];
+      const usedIndexes = new Set();
+      while (randomPokemonArray.length < count) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        if (!usedIndexes.has(randomIndex)) {
+          usedIndexes.add(randomIndex);
+          randomPokemonArray.push(data[randomIndex]);
         }
-        return randomPokemonArray;
+      }
+      return randomPokemonArray;
     }
 
-        function generateTemplateHTML(randomPokemons, buttonText) {
+    function generateTemplateHTML(randomPokemons, buttonText) {
       const gachaponText = buttonText === "generateRandomPokemon" ? "GACHAPON" : "PREMIUM GACHAPON";
-
       return `
             <div class="pokegacha">
   
@@ -127,7 +165,6 @@
 
     function generateTemplateBBCODE(randomPokemons, buttonText) {
       const gachaponText = buttonText === "generateRandomPokemon" ? "GACHAPON" : "PREMIUM GACHAPON";
-
       return `[nospaces][div][attr="class","pokegacha"]
 
   [div][attr="class","pokegachabar"]
@@ -162,32 +199,28 @@
     }
 
     function generateRandomNonLegendaryNonNfePokemonByType(type) {
+      const singlePokemonCount = document.getElementById('pokemonCount').value;
+      const pokemonCount = singlePokemonCount * 3; // Generate in packs of 3
       fetchPokemonData().then(data => {
-        const randomNonLegendaryNonNfePokemonArray = getRandomNonLegendaryNonNfePokemon(data, 3, type);
-
+        const randomNonLegendaryNonNfePokemonArray = getRandomNonLegendaryNonNfePokemon(data, pokemonCount, type);
         const templateHTML = generateTemplateHTML(randomNonLegendaryNonNfePokemonArray, "generateRandomNonLegendaryNonNfePokemonByType");
         const templateBBCODE = generateTemplateBBCODE(randomNonLegendaryNonNfePokemonArray, "generateRandomNonLegendaryNonNfePokemonByType");
-
         displayTemplate(templateHTML);
         updateTextarea(templateBBCODE);
       });
     }
 
-
-  
-    function generateRandomPokemon() {
+    function generateRandomAllTypesPokemon() {
+      const singlePokemonCount = document.getElementById('pokemonCount').value;
+      const pokemonCount = singlePokemonCount * 3; // Generate in packs of 3
       fetchPokemonData().then(data => {
-        const randomPokemonArray = getRandomNonLegendaryPokemon(data, 3);
-
+        const randomPokemonArray = getRandomNonLegendaryPokemon(data, pokemonCount);
         const templateHTML = generateTemplateHTML(randomPokemonArray, "generateRandomPokemon");
         const templateBBCODE = generateTemplateBBCODE(randomPokemonArray, "generateRandomPokemon");
-
         displayTemplate(templateHTML);
         updateTextarea(templateBBCODE);
       });
     }
-  
-  
 
     function displayTemplate(templateHTML) {
       const preview = document.getElementById('preview');
