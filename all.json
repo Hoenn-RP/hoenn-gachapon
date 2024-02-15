@@ -13039,6 +13039,7 @@
 	{
 		"id": 10247,
 		"name": "White-Striped Basculin",
+		"isNfe": true,
 		"types": [
 			"water"
 		]
