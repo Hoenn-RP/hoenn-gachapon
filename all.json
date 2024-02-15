@@ -12707,7 +12707,7 @@
 		]
 	},
 	{
-		"id": 10203,
+		"id": 10101,
 		"name": "Alolan Sandshrew",
 		"isNfe": true,
 		"types": [
@@ -12716,7 +12716,7 @@
 		]
 	},
 	{
-		"id": 10204,
+		"id": 10102,
 		"name": "Alolan Sandslash",
 		"types": [
 			"ice",
@@ -12724,7 +12724,7 @@
 		]
 	},
 	{
-		"id": 10205,
+		"id": 10103,
 		"name": "Alolan Vulpix",
 		"isNfe": true,
 		"types": [
@@ -12732,7 +12732,7 @@
 		]
 	},
 	{
-		"id": 10206,
+		"id": 10104,
 		"name": "Alolan Ninetales",
 		"types": [
 			"ice",
@@ -12740,7 +12740,7 @@
 		]
 	},
 	{
-		"id": 10207,
+		"id": 10105,
 		"name": "Alolan Diglett",
 		"isNfe": true,
 		"types": [
@@ -12749,7 +12749,7 @@
 		]
 	},
 	{
-		"id": 10208,
+		"id": 10106,
 		"name": "Alolan Dugtrio",
 		"types": [
 			"ground", 
@@ -12757,7 +12757,7 @@
 		]
 	},
 	{
-		"id": 10209,
+		"id": 10107,
 		"name": "Alolan Meowth",
 		"isNfe": true,
 		"types": [
@@ -12765,7 +12765,7 @@
 		]
 	},
 	{
-		"id": 10320,
+		"id": 10161,
 		"name": "Galarian Meowth",
 		"isNfe": true,
 		"types": [
@@ -12773,7 +12773,7 @@
 		]
 	},
 	{
-		"id": 10210,
+		"id": 10108,
 		"name": "Alolan Persian",
 		"types": [
 			"dark"
@@ -12797,7 +12797,7 @@
 		]
 	},
 	{
-		"id": 10211,
+		"id": 10109,
 		"name": "Alolan Geodude",
 		"isNfe": true,
 		"types": [
@@ -12806,7 +12806,7 @@
 		]
 	},
 	{
-		"id": 10212,
+		"id": 10110,
 		"name": "Alolan Graveler",
 		"isNfe": true,
 		"types": [
@@ -12815,7 +12815,7 @@
 		]
 	},
 	{
-		"id": 10213,
+		"id": 10111,
 		"name": "Alolan Golem",
 		"types": [
 			"rock",
@@ -12863,7 +12863,7 @@
 		]
 	},
 	{
-		"id": 10214,
+		"id": 10112,
 		"name": "Alolan Grimer",
 		"isNfe": true,
 		"types": [
@@ -12871,7 +12871,7 @@
 		]
 	},
 	{
-		"id": 10215,
+		"id": 10113,
 		"name": "Alolan Muk",
 		"types": [
 			"poison",
@@ -12896,7 +12896,7 @@
 		]
 	},
 	{
-		"id": 10216,
+		"id": 10114,
 		"name": "Alolan Exeggutor",
 		"types": [
 			"grass",
@@ -12904,7 +12904,7 @@
 		]
 	},
 	{
-		"id": 10217,
+		"id": 10115,
 		"name": "Alolan Marowak",
 		"types": [
 			"fire",
