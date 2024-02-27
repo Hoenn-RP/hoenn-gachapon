@@ -13071,6 +13071,7 @@
 	{
 		"id": 10238,
 		"name": "Hisuian Zorua",
+		"isNfe": true,
 		"types": [
 			"normal",
 			"ghost"
