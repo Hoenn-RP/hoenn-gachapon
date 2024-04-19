@@ -20,7 +20,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class="icon"]:before, [class^="icon-"]:brefore, [class*=" icon-"]:before {
+[class="icon"]:before, [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "Hoenn" !important;
   font-style: normal !important;
   font-weight: normal !important;
