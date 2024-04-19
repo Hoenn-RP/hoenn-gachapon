@@ -8,9 +8,8 @@
   src: url("./iconly.eot?#iefix") format("embedded-opentype"), url("./iconly.woff2?1713546928046") format("woff2"), url("./iconly.woff?1713546928046") format("woff"), url("./iconly.ttf?1713546928046") format("truetype"), url("./iconly.svg?1713546928046#Hoenn") format("svg");
 }
 
-[data-icon]:before {
+[class="icon"], [class^="icon-"], [class*=" icon-"] {
   font-family: "Hoenn" !important;
-  content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -21,8 +20,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class="icon"]:before, [class^="icon-"]:brefore, [class*=" icon-"]:before {
   font-family: "Hoenn" !important;
   font-style: normal !important;
   font-weight: normal !important;
