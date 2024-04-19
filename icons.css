@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+/* untitled-font-1 */
+@font-face {
+  font-family: "untitled-font-1";
+  src:url("https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/fonts/1707350654.eot");
+  src:url("https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/fonts/1707350654.eot?#iefix") format("embedded-opentype"),
+    url("https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/fonts/1707350654.woff") format("woff"),
+    url("https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/fonts/1707350654.ttf") format("truetype"),
+    url("https://file.myfontastic.com/MoFUsEGeKpGshm3e6HMZEG/fonts/1707350654.svg#1707350654") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "untitled-font-1" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-grass:before {
+  content: "\63";
+}
+.icon-egg:before {
+  content: "\66";
+}
+.icon-pokedex:before {
+  content: "\69";
+}
+.icon-silph:before {
+  content: "\61";
+}
+.icon-rules:before {
+  content: "\6c";
+}
+.icon-card:before {
+  content: "\6e";
+}
+.icon-pokemart:before {
+  content: "\6b";
+}
+.icon-pd:before {
+  content: "\64";
+}
+.icon-pokemartsv:before {
+  content: "\6d";
+}
+.icon-battle:before {
+  content: "\67";
+}
+.icon-rare:before {
+  content: "\6f";
+}
+.icon-potion:before {
+  content: "\71";
+}
+.icon-key:before {
+  content: "\72";
+}
+.icon-food:before {
+  content: "\73";
+}
+.icon-bag:before {
+  content: "\77";
+}
+.icon-pokecenter:before {
+  content: "\76";
+}
+.icon-densoku:before {
+  content: "\41";
+}
+.icon-candy:before {
+  content: "\74";
+}
+.icon-arena:before {
+  content: "\43";
+}
+.icon-berry:before {
+  content: "\75";
+}
+.icon-rocket:before {
+  content: "\44";
+}
+.icon-mega:before {
+  content: "\45";
+}
+.icon-tm:before {
+  content: "\47";
+}
+.icon-ball:before {
+  content: "\62";
+}
+.icon-save:before {
+  content: "\65";
+}
+.icon-raid:before {
+  content: "\70";
+}
+.icon-zmove:before {
+  content: "\78";
+}
+.icon-terastal:before {
+  content: "\79";
+}
+.icon-dynamax:before {
+  content: "\7a";
+}
+.icon-illumina:before {
+  content: "\46";
+}
+.icon-media:before {
+  content: "\48";
+}
+.icon-sinnoh:before {
+  content: "\49";
+}
+.icon-kalos:before {
+  content: "\4a";
+}
+.icon-kanto:before {
+  content: "\4b";
+}
+.icon-alola:before {
+  content: "\4c";
+}
+.icon-hisui:before {
+  content: "\4d";
+}
+.icon-galar:before {
+  content: "\4e";
+}
+.icon-steel:before {
+  content: "\4f";
+}
+.icon-normal:before {
+  content: "\50";
+}
+.icon-poison:before {
+  content: "\51";
+}
+.icon-ghost:before {
+  content: "\52";
+}
+.icon-flying:before {
+  content: "\53";
+}
+.icon-fire:before {
+  content: "\54";
+}
+.icon-fighting:before {
+  content: "\55";
+}
+.icon-fairy:before {
+  content: "\56";
+}
+.icon-electric:before {
+  content: "\57";
+}
+.icon-dragon:before {
+  content: "\58";
+}
+.icon-rock:before {
+  content: "\59";
+}
+.icon-psychic:before {
+  content: "\5a";
+}
+.icon-ice:before {
+  content: "\30";
+}
+.icon-ground:before {
+  content: "\31";
+}
+.icon-grasstype:before {
+  content: "\32";
+}
+.icon-water:before {
+  content: "\33";
+}
+.icon-bug:before {
+  content: "\34";
+}
+.icon-dark:before {
+  content: "\35";
+}
+.icon-book:before {
+  content: "\6a";
+}
+.icon-box:before {
+  content: "\42";
+}
+.icon-trade:before {
+  content: "\36";
+}
+.icon-gift:before {
+  content: "\37";
+}
+.icon-map:before {
+  content: "\38";
+}
+.icon-status:before {
+  content: "\39";
+}
+.icon-special:before {
+  content: "\21";
+}
+.icon-physical:before {
+  content: "\22";
+}
+.icon-footprints:before {
+  content: "\23";
+}
+.icon-gift2:before {
+  content: "\24";
+}
+.icon-dress:before {
+  content: "\25";
+}
+.icon-battle2:before {
+  content: "\26";
+}
+.icon-shiny:before {
+  content: "\68";
+}
+.icon-phone:before {
+  content: "\27";
+}
+.icon-bookmark:before {
+  content: "\28";
+}
+.icon-coat:before {
+  content: "\29";
+}
+.icon-gameboy:before {
+  content: "\2a";
+}
+.icon-itemfinder:before {
+  content: "\2b";
+}
+.icon-pokeathalon:before {
+  content: "\2c";
+}
+.icon-stats:before {
+  content: "\2d";
+}
+.icon-swarm:before {
+  content: "\2e";
+}
+.icon-titan:before {
+  content: "\2f";
+}
+.icon-league:before {
+  content: "\3a";
+}
+.icon-mighty:before {
+  content: "\3b";
+}
+.icon-paldea:before {
+  content: "\3c";
+}
+.icon-hat:before {
+  content: "\3d";
+}
+.icon-head:before {
+  content: "\3e";
+}
+.icon-ballguy:before {
+  content: "\3f";
+}
+.icon-alpha:before {
+  content: "\40";
+}
+.icon-treasure2:before {
+  content: "\5b";
+}
+.icon-potion2:before {
+  content: "\5d";
+}
+.icon-key2:before {
+  content: "\5e";
+}
+.icon-candy2:before {
+  content: "\5f";
+}
+.icon-ball2:before {
+  content: "\60";
+}
+.icon-battle3:before {
+  content: "\7b";
+}
