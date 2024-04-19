@@ -170,7 +170,7 @@
 .icon-map:before {
   content: "\53";
 }
-.icon-1707350654-44:before {
+.icon-gift:before {
   content: "\54";
 }
 .icon-trade:before {
@@ -307,4 +307,40 @@
 }
 .icon-save:before {
   content: "\7b";
+}
+.icon-alert:before {
+  content: "\61";
+}
+.icon-unown:before {
+  content: "\7d";
+}
+.icon-score:before {
+  content: "\7e";
+}
+.icon-leftovers:before {
+  content: "\5c";
+}
+.icon-incense:before {
+  content: "\e000";
+}
+.icon-brawl:before {
+  content: "\e001";
+}
+.icon-calendar:before {
+  content: "\e002";
+}
+.icon-fainted:before {
+  content: "\e003";
+}
+.icon-league2:before {
+  content: "\e004";
+}
+.icon-nursery:before {
+  content: "\e005";
+}
+.icon-ruin:before {
+  content: "\e006";
+}
+.icon-ultraburst:before {
+  content: "\e007";
 }
