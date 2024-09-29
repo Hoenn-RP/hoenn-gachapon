@@ -356,3 +356,6 @@
 .icon-rocket2:before {
   content: "\e00b";
 }
+.icon-feed:before {
+  content: "\e00c";
+}
