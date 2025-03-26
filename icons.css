@@ -38,7 +38,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-grass:before {
+.icon-safari:before {
   content: "\62";
 }
 .icon-egg:before {
@@ -55,9 +55,6 @@
 }
 .icon-card:before {
   content: "\67";
-}
-.icon-pokemart:before {
-  content: "\68";
 }
 .icon-pd:before {
   content: "\69";
@@ -227,7 +224,7 @@
 .icon-ground:before {
   content: "\22";
 }
-.icon-grasstype:before {
+.icon-grass:before {
   content: "\23";
 }
 .icon-normal:before {
