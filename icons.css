@@ -359,3 +359,39 @@
 .icon-feed:before {
   content: "\e00c";
 }
+.icon-purified:before {
+  content: "\e00d";
+}
+.icon-egg2:before {
+  content: "\e00e";
+}
+.icon-field:before {
+  content: "\e00f";
+}
+.icon-fossil:before {
+  content: "\e010";
+}
+.icon-sygna:before {
+  content: "\e011";
+}
+.icon-pokerus:before {
+  content: "\e012";
+}
+.icon-pokemart:before {
+  content: "\68";
+}
+.icon-shadow:before {
+  content: "\e013";
+}
+.icon-stellar:before {
+  content: "\e014";
+}
+.icon-toxichain:before {
+  content: "\e015";
+}
+.icon-mega2:before {
+  content: "\e016";
+}
+.icon-alpha2:before {
+  content: "\e017";
+}
