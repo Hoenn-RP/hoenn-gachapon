@@ -38,7 +38,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-grass:before { content: '\e800'; } /* '' */
+.icon-safari:before { content: '\e800'; } /* '' */
 .icon-egg:before { content: '\e801'; } /* '' */
 .icon-pokedex:before { content: '\e802'; } /* '' */
 .icon-silph:before { content: '\e803'; } /* '' */
@@ -90,7 +90,7 @@
 .icon-psychic:before { content: '\e831'; } /* '' */
 .icon-ice:before { content: '\e832'; } /* '' */
 .icon-ground:before { content: '\e833'; } /* '' */
-.icon-grasstype:before { content: '\e834'; } /* '' */
+.icon-grass:before { content: '\e834'; } /* '' */
 .icon-normal:before { content: '\e835'; } /* '' */
 .icon-steel:before { content: '\e836'; } /* '' */
 .icon-galar:before { content: '\e837'; } /* '' */
